@@ -114,7 +114,7 @@ Route::group(["middleware"=>'admin.auth',"prefix"=>'admin'],function(){
     
 });
 
-// =======Frontent Routes=========
+// =======Frontent Routes for users=========
 Route::group(["middleware"=>'auth'],function(){
 
     //****************Checkout Routes****************
