@@ -1,0 +1,70 @@
+.w-4 {
+  width: 1rem;
+}
+.h-4 {
+  height: 1rem;
+}
+
+.w-6 {
+  width: 1.5rem;
+}
+.h-6 {
+  height: 1.5rem;
+}
+
+.dropzone {
+  background: white;
+  border-radius: 5px;
+  border: 2px dashed rgb(0, 135, 247);
+  border-image: none;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  height: 19px;
+}
+
+/* Hide the default checkbox input */
+.toggle input {
+  display: none;
+}
+
+/* Style the slider (the visual part of the toggle) */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc; /* Default background color when toggle is off */
+  transition: .4s;
+  border-radius: 30px;
+}
+
+/* Change the background color of the slider when the toggle is checked (on) */
+.toggle input:checked + .slider {
+  background-color: #2196F3; /* Background color when toggle is on */
+}
+
+/* Style the slider "knob" (the small circle in the middle) */
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+/* Move the slider knob to the right when the toggle is checked (on) */
+.toggle input:checked + .slider::before {
+  transform: translateX(17px);
+}
