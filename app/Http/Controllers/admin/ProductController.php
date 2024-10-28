@@ -134,7 +134,7 @@ class ProductController extends Controller
             $products->image = $filename;
         }
         $products->save();
-        return redirect()->route('admin.product.list')->with('success','Product Update Successfully');    
+        return redirect()->route('admin.product.list')->with('success','Product Update Successfully');
     }
 
     public function delete(Request $request){
@@ -157,7 +157,7 @@ class ProductController extends Controller
         if($request->hasfile('image')){
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
+            $filename = rand(10000,99999).'_'.$file->getClientOriginalName();
             $file->move('public/admin/img/products/',$filename);
             $gallery = new ProductGallery;
             $gallery->product_id = $product_id;

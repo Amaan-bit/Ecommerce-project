@@ -16,7 +16,7 @@
         height: 150px;
     }
 </style>
-<section class="content-header">					
+<section class="content-header">
     <div class="container-fluid my-2">
         <div class="row mb-2">
             <div class="col-sm-6">
@@ -34,13 +34,13 @@
     <!-- Default box -->
     <div class="container-fluid">
         <div class="card">
-            <div class="card-body">								
+            <div class="card-body">
                 <form method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-12">
                             <div id="image" class="dropzone dz-clickable">
-                                <div class="dz-message needsclick">    
-                                    <br>Drop files here or click to upload.<br><br>                                            
+                                <div class="dz-message needsclick">
+                                    <br>Drop files here or click to upload.<br><br>
                                 </div>
                             </div>
                             <div class="row" id="product_gallery">
@@ -57,12 +57,12 @@
                                     @endforeach
                                 @endif
                             </div>
-                        </div>							
+                        </div>
                     </div>
                 </form>
-            </div>							
+            </div>
         </div>
-        
+
     </div>
     <!-- /.card -->
 </section>
@@ -71,10 +71,10 @@
 
 @push('script')
 <script>
-    Dropzone.autoDiscover = false;    
+    Dropzone.autoDiscover = false;
     $(function () {
-       
-        const dropzone = $("#image").dropzone({ 
+
+        const dropzone = $("#image").dropzone({
             url:  "{{route('admin.product.gallery.add',$product_id)}}",
             maxFiles: 5,
             addRemoveLinks: true,

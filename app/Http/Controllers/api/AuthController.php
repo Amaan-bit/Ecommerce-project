@@ -34,6 +34,21 @@ class AuthController extends Controller
         }
     }
 
+    public function logout(Request $request){
+        if (auth('sanctum')->check()) {
+            if (auth('sanctum')->check()) {
+                $last = auth('sanctum')->user()->currentAccessToken()->delete();
+                if ($last) {
+                    return response()->json(['status' => 200, 'message' => "User logout succesfully"]);
+                } else {
+                    return response()->json(['status' => 202, 'message' => "User logout succesfully"]);
+                }
+            } else {
+                 return response()->json(['status' => 503, 'message' => "You are not logged in user", 'token' => '']);
+            }
+        }   
+    }
+
     public function user_detail(Request $request){
         $validate = Validator::make($request->all(), 
         [
